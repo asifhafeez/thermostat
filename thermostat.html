@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+
+body
+{
+  margin: 0px;
+  padding: 0px;
+  line-height: 25px;     font-family: Calibri;
+  font-size: 18px;
+  color: #3babf2;     background-color: #040404;
+  font-weight: bold;
+}
+
+#wrapper
+{
+  width: 100%;
+
+}
+
+
+/* Page */
+
+#page
+{
+  border: 1px solid #636363;
+  width: 98%;
+  height: 990px;
+  margin: 11px auto;
+  /*padding: 3px 3px 3px 3px; /*background: url(images/img04.jpg) repeat-x left top;
+  background: url(images/img04.jpg) repeat;*/
+  background-color: #313131;
+}
+.centre{
+  text-align: center;
+}
+.down-temp{
+  display: inline-block;
+}
+.temp-text{
+  display: inline-block;
+}
+.up-temp{
+  display: inline-block;
+}
+</style>
+
+</head>
 <body>
+  <div id="page">
+    <div class="centre">
+    <div class="temperature-display">
+      20c
 
-<h1>My First Headin</h1>
+    </div>
+    <div class="energy-use">
 
-<p>My first paragraph.</p>
+    </div>
 
+    <div class="down-temp">
+      <button>down</button>
+
+    </div>
+    <div class="temp-text">- Temperature +</div>
+    <div class="up-temp">
+      <button>up</button>
+
+    </div>
+    <div class="power-saving-mode">
+      <button>Power Saving</button>
+
+    </div>
+  </div>
+    <div class="reset-temp">
+      <button>Reset Temp</button>
+
+    </div>
+  </div>
+  <script src="src/Thermostat.js"></script>
 </body>
+
 </html>
