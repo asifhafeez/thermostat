@@ -24,8 +24,8 @@ Thermostat.prototype.downTemp = function(value) {
 
 Thermostat.prototype.powerSavingSwitch = function() {
 	this.powerSavingMode = !this.powerSavingMode
-  this.setMaxTemp()
-  this.resetTemp()
+  this.setMaxTemp();
+  this.changeTemp();
 };
 
 Thermostat.prototype.setMaxTemp = function() {
@@ -45,4 +45,10 @@ Thermostat.prototype.setEnergyUse = function () {
   } else {
     this.energyUse =  'high-usage'
   }
+};
+
+Thermostat.prototype.changeTemp = function() {
+  if (this.temperature > this.maxTemp) {
+    this.temperature = this.maxTemp
+  };
 };
