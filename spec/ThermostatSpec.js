@@ -73,4 +73,21 @@ describe("Thermostat", function() {
     });
   });
 
+  describe('Current usage', function() {
+
+    it('energy use is set to low, below 18', function() {
+      thermostat.downTemp(3)
+      expect(thermostat.energyUse).toBe("low-usage")
+    });
+
+    it('energy use is set to med, below 25', function() {
+      expect(thermostat.energyUse).toBe("med-usage")
+    });
+
+    it('energy use is set to high, above 24', function() {
+      thermostat.upTemp(5)
+      expect(thermostat.energyUse).toBe("high-usage")
+    });
+
+  });
 });
