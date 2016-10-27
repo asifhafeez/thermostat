@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+    <link rel="stylesheet" href="styles/jquery-ui.css">
+    <link rel="stylesheet" href="styles/thermostat.css">
+
+    <script src="js/Thermostat.js"></script>
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.thermometer.js"></script>
+    <script type="text/javascript" src="js/displayThermometer.js"></script>
+    <script type="text/javascript" src="js/buttonsThermometer.js"></script>
+
+  </head>
+  <body>
+    <h1>Temperature</h1><h1 id="temp"></h1>
+    <div id="display"></div>
+    <h2>Power Saving On/Off</h2>
+    <div id="powersave" class="on"></div>
+    <button id="save_toggle">Power Saving Mode</button>
+    <p>
+      <button class="button" id="temp-up">▲</button>
+      <button class="button" id="reset">Reset</button>
+      <button class="button" id="temp-down">▼</button>
+
+    </p>
+
+  </body>
+</html>

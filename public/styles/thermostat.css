@@ -1,0 +1,114 @@
+body{
+  margin: auto;
+  text-align: center;
+  background-color: #e5f2fb;
+}
+
+h1 {
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+h2 {
+  font-family: monaco, Consolas, 'Lucida Console', monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15px;
+}
+
+
+#display{
+  margin: auto;
+  text-align: center;
+  padding-left: 580px;
+}
+
+div.on {
+  margin: auto;
+  text-align: center;
+    content:url("http://s11.postimg.org/uwcddlow3/imageedit_25_9758325528.png");
+    height: 50px;
+    width: 50px;
+    padding: 5px 5px;
+    padding-bottom: 10px;
+    }
+
+div.off {
+  margin: auto;
+  text-align: center;
+  content:url("http://i.imgur.com/H21clLo.png");
+  height: 50px;
+  width: 50px;
+  padding: 5px 5px;
+  padding-bottom: 10px;
+  }
+
+div.toggle {
+  margin: auto;
+  text-align: center;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+}
+
+#temp-up {
+    background-color: #f2f2f2;
+    color: black;
+    border: 2px solid black;
+}
+
+#temp-up:hover {
+    background-color: lime;
+    color: white;
+}
+
+#temp-down {
+    background-color: #f2f2f2;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px
+}
+
+#temp-down:hover {
+    background-color: red;
+    color: white;
+}
+
+#reset {
+    background-color: #f2f2f2;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px
+}
+
+#reset:hover {
+    background-color: yellow;
+    color: white;
+}
+
+#save_toggle {
+    background-color: #f2f2f2;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px
+}
