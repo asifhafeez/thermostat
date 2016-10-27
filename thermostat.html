@@ -16,9 +16,7 @@ body
 #wrapper
 {
   width: 100%;
-
 }
-
 
 /* Page */
 
@@ -47,32 +45,32 @@ body
 .energy-use{
   margin: auto;
   border: 5px solid red;
-  width: 25vw;
-  height: 25vw
+  background-color: red;
+  width: 15vw;
+  height: 15vw
+}
+a.test {
+    font-weight: bold;
 }
 </style>
 
 </head>
 <body>
-  <div id="page">
+
+	<div id="page">
     <div class="centre">
-    <div class="temperature-display">
-      20c
+    <div id="temperature-display">
+      
 
     </div>
     <div class="energy-use">
         
     </div>
 
-    <div class="down-temp">
-      <button>down</button>
-
-    </div>
+    <button class="down-temp">down</button>
     <div class="temp-text">- Temperature +</div>
-    <div class="up-temp">
-      <button>up</button>
+    <button class="up-temp">up</button>
 
-    </div>
     <div class="power-saving-mode">
       <button>Power Saving</button>
 
@@ -83,7 +81,15 @@ body
 
     </div>
   </div>
-  <script src="src/Thermostat.js"></script>
+    <script src="jquery.js"></script>
+    <script src="src/Thermostat.js"></script>
+
+	<script>
+	  var thermostat = new Thermostat();
+	  document.getElementById("temperature-display").innerHTML = thermostat.temperature;
+
+	</script>
+  
 </body>
 
 </html>
