@@ -33,13 +33,13 @@ body
 .centre{
   text-align: center;
 }
-.down-temp{
+#down-temp{
   display: inline-block;
 }
 .temp-text{
   display: inline-block;
 }
-.up-temp{
+#up-temp{
   display: inline-block;
 }
 .energy-use{
@@ -50,46 +50,71 @@ body
   height: 15vw
 }
 a.test {
-    font-weight: bold;
+  font-weight: bold;
 }
 </style>
 
 </head>
 <body>
 
-	<div id="page">
+  <div id="page">
     <div class="centre">
-    <div id="temperature-display">
-      
+      <div id="temperature-display">
+
+
+      </div>
+      <div class="energy-use">
+
+      </div>
+
+      <button id="down-temp">down</button>
+      <div class="temp-text">- Temperature +</div>
+      <button id="up-temp">up</button>
+      <div >
+        <button id="power-saving-mode">Power Saving</button>
+
+      </div>
+
 
     </div>
-    <div class="energy-use">
-        
-    </div>
+    <button id="reset-temp"> Reset Temp</button>
 
-    <button class="down-temp">down</button>
-    <div class="temp-text">- Temperature +</div>
-    <button class="up-temp">up</button>
-
-    <div class="power-saving-mode">
-      <button>Power Saving</button>
-
-    </div>
   </div>
-    <div class="reset-temp">
-      <button>Reset Temp</button>
+</div>
+<script src="jquery.js"></script>
+<script src="src/Thermostat.js"></script>
 
-    </div>
-  </div>
-    <script src="jquery.js"></script>
-    <script src="src/Thermostat.js"></script>
+<script>
+var thermostat = new Thermostat();
+document.getElementById("temperature-display").innerHTML = thermostat.temperature;
+$( document ).ready(function() {
 
-	<script>
-	  var thermostat = new Thermostat();
-	  document.getElementById("temperature-display").innerHTML = thermostat.temperature;
+  $( "#down-temp" ).click(function() {
+    thermostat.downTemp(1)
+    $("#temperature-display").text(thermostat.temperature)
+  });
+  $( "#up-temp" ).click(function() {
+    thermostat.upTemp(1)
+    $("#temperature-display").text(thermostat.temperature)
+  });
+  $( "#power-saving-mode" ).click(function() {
+    thermostat.powerSavingSwitch()
+    $("#temperature-display").text(thermostat.temperature)
+  });
+  $( "#reset-temp" ).click(function() {
+    thermostat.resetTemp()
+    $("#temperature-display").text(thermostat.temperature)
+  });
 
-	</script>
-  
+});
+
+// document.getElementById("down-temp").onclick=function() {thermostat.downTemp(1)};
+// document.getElementById("up-temp").onclick=function() {thermostat.upTemp(1)};
+// document.getElementById("power-saving-mode").onclick=function() {thermostat.powerSavingSwitch()};
+// document.getElementById("reset-temp").onclick=function() {thermostat.resetTemp()};
+
+</script>
+
 </body>
 
 </html>
