@@ -26,33 +26,33 @@ describe("Thermostat", function() {
     	expect(thermostat.minTemp).toBe(10)
     });
 
-    it('has a maximum temperature of 32 degrees', function(){
-    	expect(thermostat.maxTemp).toBe(32)
-    });
-
   });
 
   describe('Power saving mode', function() {
 
 
-    it('is switched off by default', function() {
-      expect(thermostat.powerSavingMode).toBe(false);
+    it('is switched on by default', function() {
+      expect(thermostat.powerSavingMode).toBe(true);
     });
 
     it('can be switched on', function() {
       thermostat.powerSavingSwitch();
+      thermostat.powerSavingSwitch();
       expect(thermostat.powerSavingMode).toBe(true);
+    });
+
+    it('maximium temperature is 25 when on', function() {
+      expect(thermostat.maxTemp).toBe(25);
     });
 
     it('can be switched off', function() {
       thermostat.powerSavingSwitch();
-      thermostat.powerSavingSwitch();
       expect(thermostat.powerSavingMode).toBe(false);
     });
 
-    it('maximium temperature is 25 when on', function() {
+    it('maximium temperature is 32 when off', function() {
       thermostat.powerSavingSwitch();
-      expect(thermostat.maxTemp).toBe(25);
+      expect(thermostat.maxTemp).toBe(32);
     });
 
   });

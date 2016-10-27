@@ -1,8 +1,8 @@
 function Thermostat() {
   this.temperature = 20;
   this.minTemp = 10;
-  this.powerSavingMode = false;
-  this.maxTemp = 32;
+  this.powerSavingMode = true;
+  this.setMaxTemp()
 };
 
 Thermostat.prototype.upTemp = function(value) {
