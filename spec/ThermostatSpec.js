@@ -57,4 +57,15 @@ describe("Thermostat", function() {
 
   });
 
+  describe('temperature extremes', function() {
+
+    it('cannot go below the minimum temperature', function() {
+      expect(function(){ thermostat.downTemp(23) }).toThrow(new Error(`Cannot go below ${thermostat.minTemp} degrees!`))
+    });
+
+    it('cannot go above the maximum temperature', function() {
+      expect(function(){ thermostat.upTemp(23) }).toThrow(new Error(`Cannot go above ${thermostat.maxTemp} degrees!`))
+    });
+  });
+
 });
