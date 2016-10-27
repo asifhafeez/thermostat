@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
 <style>
 
 body
 {
   margin: 0px;
   padding: 0px;
-  line-height: 25px;     font-family: Calibri;
+  line-height: 25px;    
+  font-family: Calibri;
   font-size: 18px;
-  color: #3babf2;     background-color: #040404;
-  font-weight: bold;
+  color: #3babf2; 
+  background-color: #040404;
 }
 
 #wrapper
@@ -49,9 +54,53 @@ body
   width: 15vw;
   height: 15vw
 }
-a.test {
-  font-weight: bold;
+
+.onoffswitch {
+   position: relative; width: 180px;
+   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
+.onoffswitch-checkbox {
+   display: none;
+}
+.onoffswitch-label {
+   display: block; overflow: hidden; cursor: pointer;
+   border: 2px solid #999999 ; border-radius: 20px;
+}
+.onoffswitch-inner {
+   display: block; width: 200%; margin-left: -100%;
+   transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+   display: block; float: left; width: 50%; height: 18px; padding: 0; line-height: 18px;
+   font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+   box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+   content: "Power Save ON";
+   padding-left: 10px;
+   background-color: #34A7C1 ; color: #FFFFFF ;
+}
+.onoffswitch-inner:after {
+   content: "Power Save OFF";
+   padding-right: 10px;
+   background-color: #EEEEEE ; color: #999999 ;
+   text-align: right;
+}
+.onoffswitch-switch {
+   display: block; width: 44px; margin: -13px;
+   background: #FFFFFF ;
+   position: absolute; top: 0; bottom: 0;
+   right: 145px;
+   border: 2px solid #999999 ; border-radius: 20px;
+   transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+   margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+   right: 0px; 
+}
+
 </style>
 
 </head>
@@ -70,14 +119,22 @@ a.test {
       <button id="down-temp">down</button>
       <div class="temp-text">- Temperature +</div>
       <button id="up-temp">up</button>
-      <div >
-        <button id="power-saving-mode">Power Saving</button>
-
+      <div>
+				<br><center>
+      	<div class="onoffswitch">
+   			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox power-saving-mode" id="myonoffswitch" checked>
+   			<label class="onoffswitch-label" for="myonoffswitch">
+       <span class="onoffswitch-inner"></span>
+       <span class="onoffswitch-switch"></span>
+   		 </label>
+   		
+			</div>
+        
       </div>
 
 
+    <br><button id="reset-temp"> Reset Temp</button></center>
     </div>
-    <button id="reset-temp"> Reset Temp</button>
 
   </div>
 </div>
@@ -97,9 +154,10 @@ $( document ).ready(function() {
     thermostat.upTemp(1)
     $("#temperature-display").text(thermostat.temperature)
   });
-  $( "#power-saving-mode" ).click(function() {
+  $( ".power-saving-mode" ).click(function() {
     thermostat.powerSavingSwitch()
     $("#temperature-display").text(thermostat.temperature)
+    
   });
   $( "#reset-temp" ).click(function() {
     thermostat.resetTemp()
@@ -108,10 +166,6 @@ $( document ).ready(function() {
 
 });
 
-// document.getElementById("down-temp").onclick=function() {thermostat.downTemp(1)};
-// document.getElementById("up-temp").onclick=function() {thermostat.upTemp(1)};
-// document.getElementById("power-saving-mode").onclick=function() {thermostat.powerSavingSwitch()};
-// document.getElementById("reset-temp").onclick=function() {thermostat.resetTemp()};
 
 </script>
 
