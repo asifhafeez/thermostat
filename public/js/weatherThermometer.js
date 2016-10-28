@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$( "#city" ).selectmenu();
 	$( "select" )
 		.change(function() {
 			$( "select option:selected" ).each(function() {
@@ -22,7 +21,5 @@ $(document).ready(function(){
 
 		})
 		.trigger( "change" );
-
-
 
 });
