@@ -23,4 +23,5 @@ $('#temp').text(thermostat.CurrentTemperature());
       $('#temp').text(thermostat.CurrentTemperature());
       updateThermometer();
   });
-});  
+
+});
