@@ -717,7 +717,7 @@ button.ui-button::-moz-focus-inner {
 	text-overflow: ellipsis;
 }
 .ui-selectmenu-button.ui-button {
-	text-align: left;
+	text-align: center;
 	white-space: nowrap;
 	width: 14em;
 }
