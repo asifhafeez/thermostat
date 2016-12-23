@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="thermostat.css" type='text/css'>
+
+</head>
+<body>
+
+  <div id="page">
+    <div class="centre">
+      <div id="temperature-display">
+
+
+      </div>
+      <div class="energy-use">
+
+      </div>
+
+      <button id="down-temp">down</button>
+      <div class="temp-text">- Temperature +</div>
+      <button id="up-temp">up</button>
+      <div>
+				<br><center>
+      	<div class="onoffswitch">
+   			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox power-saving-mode" id="myonoffswitch" checked>
+   			<label class="onoffswitch-label" for="myonoffswitch">
+       <span class="onoffswitch-inner"></span>
+       <span class="onoffswitch-switch"></span>
+   		 </label>
+   		
+			</div>
+        
+      </div>
+
+
+    <br><button id="reset-temp"> Reset Temp</button></center>
+    </div>
+
+  </div>
+</div>
+<script src="jquery.js"></script>
+<script src="src/Thermostat.js"></script>
+<script src="application.js"></script>
+
+</body>
+
+</html>
