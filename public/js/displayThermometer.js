@@ -1,6 +1,9 @@
 var thermostat = new Thermostat();
 
       $(document).ready(function(){
+        
+
+
 
         function updateThermometer() {
           $('#display').thermometer( 'setValue', thermostat.CurrentTemperature() );
